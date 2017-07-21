@@ -38,7 +38,7 @@ bot.onText(/\/arvo/, (msg) => {
   const chatId = msg.chat.id;
   const rank = "ALOKAS"
   const surname = "Gaubusseau"
-  const resp = "Julle tunnetaan nimellä " + rank + " " + surname;
+  const resp = "Julle tunnetaan arvolla " + rank + " " + surname;
   // send back the matched "whatever" to the chat
   bot.sendMessage(chatId, resp);
 });
