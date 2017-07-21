@@ -28,8 +28,8 @@ bot.onText(/\/tj/, (msg) => {
   const daysLeft = days_between(dateToday, dateOfFreedom);
   const resp = "Tänään jäljellä " + daysLeft + " aamua!";
   // send back the matched "whatever" to the chat
-  bot.sendMessage(chatId, dateToday);
-  bot.sendMessage(chatId, dateOfFreedom);
+  //bot.sendMessage(chatId, dateToday); //debugging
+  //bot.sendMessage(chatId, dateOfFreedom); //debugging
   bot.sendMessage(chatId, resp);
 });
 
