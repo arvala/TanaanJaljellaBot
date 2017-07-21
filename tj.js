@@ -19,8 +19,40 @@ function days_between(date1, date2) {
     return Math.round(difference_ms/ONE_DAY)
 
 }
+// returns the amount of days left before going home on 14.6.2018. Responds to command /tj
+bot.onText(/\/tj/, (msg) => {
 
+  const chatId = msg.chat.id;
+  const dateToday = Date.now(); // the captured "whatever"
+  const dateOfFreedom = new Date(2018, 06, 14);
+  const daysLeft = days_between(dateToday, dateOfFreedom);
+  const resp = "Tänään jäljellä " + daysLeft + " aamua!";
+  // send back the matched "whatever" to the chat
+  bot.sendMessage(chatId, resp);
+});
+
+bot.onText(/\/aravo/, (msg) => {
+
+  const chatId = msg.chat.id;
+  const rank = "ALOKAS"
+  const surname = "Gaubusseau"
+  const resp = "Julle tunnetaan nimellä " + rank + " " + surname;
+  // send back the matched "whatever" to the chat
+  bot.sendMessage(chatId, resp);
+});
+
+// Listen for any kind of message. There are different kinds of
+// messages.
+/*
+bot.on('message', (msg) => {
+  const chatId = msg.chat.id;
+
+  // send a message to the chat acknowledging receipt of their message
+  bot.sendMessage(chatId, 'Received your message');
+});
+*/
 // Matches "/echo [whatever]"
+/*
 bot.onText(/\/echo (.+)/, (msg, match) => {
   // 'msg' is the received Message from Telegram
   // 'match' is the result of executing the regexp above on the text content
@@ -32,26 +64,4 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
   // send back the matched "whatever" to the chat
   bot.sendMessage(chatId, resp);
 });
-
-bot.onText(/\/tj/, (msg) => {
-  // 'msg' is the received Message from Telegram
-  // 'match' is the result of executing the regexp above on the text content
-  // of the message
-
-  const chatId = msg.chat.id;
-  const dateToday = Date.now(); // the captured "whatever"
-  const dateOfFreedom = new Date(2017, 06, 30);
-  const daysLeft = days_between(dateToday, dateOfFreedom);
-  const resp = "Jullella on vielä " + daysLeft + " aamua jäljellä kotiutuakseen";
-  // send back the matched "whatever" to the chat
-  bot.sendMessage(chatId, resp);
-});
-
-// Listen for any kind of message. There are different kinds of
-// messages.
-bot.on('message', (msg) => {
-  const chatId = msg.chat.id;
-
-  // send a message to the chat acknowledging receipt of their message
-  bot.sendMessage(chatId, 'Received your message');
-});
+*/
