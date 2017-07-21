@@ -23,15 +23,17 @@ function days_between(date1, date2) {
 bot.onText(/\/tj/, (msg) => {
 
   const chatId = msg.chat.id;
-  const dateToday = Date.now(); // the captured "whatever"
-  const dateOfFreedom = new Date(2018, 06, 14);
+  const dateToday = new Date(); 
+  const dateOfFreedom = new Date(2018, 05, 14); //January is index 0
   const daysLeft = days_between(dateToday, dateOfFreedom);
   const resp = "Tänään jäljellä " + daysLeft + " aamua!";
   // send back the matched "whatever" to the chat
+  bot.sendMessage(chatId, dateToday);
+  bot.sendMessage(chatId, dateOfFreedom);
   bot.sendMessage(chatId, resp);
 });
 
-bot.onText(/\/aravo/, (msg) => {
+bot.onText(/\/arvo/, (msg) => {
 
   const chatId = msg.chat.id;
   const rank = "ALOKAS"
