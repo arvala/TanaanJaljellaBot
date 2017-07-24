@@ -1,10 +1,38 @@
 const TelegramBot = require('node-telegram-bot-api');
+const express = require('express');
+const bodyParser = require('body-parser');
 
 // replace the value below with the Telegram token you receive from @BotFather
 const token = '383782709:AAHxEVtykKhYv9hmLaO_phPGDVlxY26k6jo';
 
+
+/*
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, {polling: true});
+*/
+
+// Create a bot that uses 'webhook' to fetch new updates
+const url = 'https://arvala.eu';
+const bot = new TelegramBot(token);
+const port = 3000;
+
+bot.setWebHook(`${url}/bot${token}`);
+
+const app = express();
+
+// parse the updates to JSON
+app.use(bodyParser.json());
+
+// We are receiving updates at the route below!
+app.post(`/bot${token}`, (req, res) => {
+  bot.processUpdate(req.body);
+  res.sendStatus(200);
+});
+
+// Start Express Server
+app.listen(port, () => {
+  console.log(`Express server is listening on ${port}`);
+});
 
 function days_between(date1, date2) {
 
@@ -67,3 +95,6 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
   bot.sendMessage(chatId, resp);
 });
 */
+bot.on('webhook_error', (error) => {
+  console.log(error.code);  // => 'EPARSE'
+});
