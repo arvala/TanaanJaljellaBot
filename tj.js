@@ -14,7 +14,7 @@ const bot = new TelegramBot(token, {polling: true});
 // Create a bot that uses 'webhook' to fetch new updates
 const url = 'https://arvala.eu';
 const bot = new TelegramBot(token);
-const port = 3000;
+const port = 3001;
 
 bot.setWebHook(`${url}/bot${token}`);
 
