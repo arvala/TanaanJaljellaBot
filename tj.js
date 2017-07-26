@@ -47,6 +47,14 @@ function days_between(date1, date2) {
     return Math.round(difference_ms/ONE_DAY)
 
 }
+
+function name_the_frenchie(){
+  var names = ["Gaubusseau", "Gobi", "Gobysov", "Kaupassa", "FransmanNI", "Ranskis", "Gaubussuauau", "Ranska", "Gubi", "Kopisoi", "Gaubusssööö"];
+  var chosenName = names[Math.floor(Math.random() * names.length)];
+  return chosenName;
+
+}
+
 // returns the amount of days left before going home on 14.6.2018. Responds to command /tj
 bot.onText(/\/tj/, (msg) => {
 
@@ -65,7 +73,7 @@ bot.onText(/\/arvo/, (msg) => {
 
   const chatId = msg.chat.id;
   const rank = "ALOKAS"
-  const surname = "Gaubusseau"
+  const surname = name_the_frenchie();
   const resp = "Julle tunnetaan arvolla " + rank + " " + surname;
   // send back the matched "whatever" to the chat
   bot.sendMessage(chatId, resp);
