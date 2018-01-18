@@ -51,7 +51,7 @@ function days_between(date1, date2) {
 }
 
 function name_the_frenchie(){
-  var names = ["Gaubusseau", "Gobi", "Gobysov", "Kaupassa", "FransmanNI", "Ranskis", "Gaubussuauau", "Ranska", "Gubi", "Kopisoi", "Gaubusssööö", "Käpysoppa", "Kubussi", "Goblin", "Goobysoo"];
+  var names = ["Gaubusseau", "Gobi", "Gobysov", "Kaupassa", "FransmanNI", "Ranskis", "Gaubussuauau", "Ranska", "Gubi", "Kopisoi", "Gaubusssööö", "Käpysoppa", "Kubussi", "Goblin", "Goobysoo", "Bisseau"];
   var chosenName = names[Math.floor(Math.random() * names.length)];
   return chosenName;
 
@@ -72,7 +72,7 @@ bot.onText(/\/tj/, (msg) => {
 bot.onText(/\/arvo/, (msg) => {
 
   const chatId = msg.chat.id;
-  const rank = "UPSEERIOPPILAS"
+  const rank = "UPSEERIKOKELAS"
   const surname = name_the_frenchie();
   const resp = "Julle tunnetaan arvolla " + rank + " " + surname;
   // send back the matched "whatever" to the chat
