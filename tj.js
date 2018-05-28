@@ -46,12 +46,12 @@ function days_between(date1, date2) {
     var difference_ms = Math.abs(date1 - date2);
     console.log(difference_ms);
     // Convert back to days and return
-    return Math.round(difference_ms/ONE_DAY)
+    return Math.ceil(difference_ms/ONE_DAY)
 
 }
 
 function name_the_frenchie(){
-  var names = ["Gaubusseau", "Gobi", "Gobysov", "Kaupassa", "FransmanNI", "Ranskis", "Gaubussuauau", "Ranska", "Gubi", "Kopisoi", "Gaubusssööö", "Käpysoppa", "Kubussi", "Goblin", "Goobysoo", "Bisseau"];
+  var names = ["Gaubusseau", "Gobi", "Gobysov", "Kaupassa", "FransmanNI", "Ranskis", "Gaubussuauau", "Ranska", "Gubi", "Kopisoi", "Gaubusssööö", "Käpysoppa", "Kubussi", "Goblin", "Goobysoo", "Bisseau", "Gobuzie", "Gabuzie"];
   var chosenName = names[Math.floor(Math.random() * names.length)];
   return chosenName;
 
@@ -62,7 +62,7 @@ bot.onText(/\/tj/, (msg) => {
 
   const chatId = msg.chat.id;
   const dateToday = moment();
-  var dateOfFreedom = new Date(2018, 05, 14, 06); //January is index 0
+  var dateOfFreedom = new Date(2018, 05, 14, 05, 45); //January is index 0
       dateOfFreedom = moment(dateOfFreedom);
   const daysLeft = days_between(dateToday, dateOfFreedom);
   const resp = "Tänään jäljellä " + daysLeft + " aamua!";
