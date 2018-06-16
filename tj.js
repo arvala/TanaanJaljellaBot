@@ -46,7 +46,7 @@ function days_between(date1, date2) {
     var difference_ms = Math.abs(date1 - date2);
     console.log(difference_ms);
     // Convert back to days and return
-    return Math.ceil(difference_ms/ONE_DAY)
+    return Math.floor(difference_ms/ONE_DAY)
 
 }
 
