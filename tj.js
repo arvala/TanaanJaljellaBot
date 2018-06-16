@@ -65,14 +65,14 @@ bot.onText(/\/tj/, (msg) => {
   var dateOfFreedom = new Date(2018, 05, 14, 05, 45); //January is index 0
       dateOfFreedom = moment(dateOfFreedom);
   const daysLeft = days_between(dateToday, dateOfFreedom);
-  const resp = "Reservin aamuja takana " + daysLeft + " aamua!";
+  const resp = "Reservissä takana " + daysLeft + " aamua!";
   bot.sendMessage(chatId, resp);
 });
 
 bot.onText(/\/arvo/, (msg) => {
 
   const chatId = msg.chat.id;
-  const rank = "Vänrikki"
+  const rank = "vänrikki"
   const surname = name_the_frenchie();
   const resp = "Julsen tunnetaan arvolla " + rank + " " + surname;
   // send back the matched "whatever" to the chat
