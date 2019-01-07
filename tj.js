@@ -49,7 +49,7 @@ function days_between(date1, date2) {
     return Math.floor(difference_ms/ONE_DAY)
 
 }
-
+//function not used since bot is used to track another person
 function name_the_frenchie(){
   var names = ["Gaubusseau", "Gobi", "Gobysov", "Kaupassa", "FransmanNI", "Ranskis", "Gaubussuauau", "Ranska", "Gubi", "Kopisoi", "Gaubusssööö", "Käpysoppa", "Kubussi", "Goblin", "Goobysoo", "Bisseau", "Gobuzie", "Gabuzie"];
   var chosenName = names[Math.floor(Math.random() * names.length)];
@@ -62,7 +62,7 @@ bot.onText(/\/tj/, (msg) => {
 
   const chatId = msg.chat.id;
   const dateToday = moment();
-  var dateOfFreedom = new Date(2018, 05, 14, 05, 45); //January is index 0
+  var dateOfFreedom = new Date(2019, 11, 19, 5, 45); //January is index 0
       dateOfFreedom = moment(dateOfFreedom);
   const daysLeft = days_between(dateToday, dateOfFreedom);
   const resp = "Reservissä takana " + daysLeft + " aamua!";
@@ -72,9 +72,9 @@ bot.onText(/\/tj/, (msg) => {
 bot.onText(/\/arvo/, (msg) => {
 
   const chatId = msg.chat.id;
-  const rank = "vänrikki"
-  const surname = name_the_frenchie();
-  const resp = "Julsen tunnetaan arvolla " + rank + " " + surname;
+  const rank = "alokas";
+  const surname = "Jarkko";
+  const resp = "Leena tunnetaan nimellä " + rank + " " + surname;
   // send back the matched "whatever" to the chat
   bot.sendMessage(chatId, resp);
 });
