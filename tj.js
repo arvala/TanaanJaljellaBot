@@ -46,7 +46,7 @@ function days_between(date1, date2) {
     var difference_ms = Math.abs(date1 - date2);
     console.log(difference_ms);
     // Convert back to days and return
-    return Math.floor(difference_ms/ONE_DAY)
+    return Math.ceil(difference_ms/ONE_DAY)
 
 }
 //function not used since bot is used to track another person
@@ -57,7 +57,7 @@ function name_the_frenchie(){
 
 }
 
-// returns the amount of days left before going home on 14.6.2018. Responds to command /tj
+// returns the amount of days left before going home on 19.12.2019. Responds to command /tj
 bot.onText(/\/tj/, (msg) => {
 
   const chatId = msg.chat.id;
