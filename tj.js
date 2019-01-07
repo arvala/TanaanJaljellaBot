@@ -65,7 +65,7 @@ bot.onText(/\/tj/, (msg) => {
   var dateOfFreedom = new Date(2019, 11, 19, 5, 45); //January is index 0
       dateOfFreedom = moment(dateOfFreedom);
   const daysLeft = days_between(dateToday, dateOfFreedom);
-  const resp = "Reservissä takana " + daysLeft + " aamua!";
+  const resp = "Tänään jäljellä " + daysLeft + " aamua!";
   bot.sendMessage(chatId, resp);
 });
 
