@@ -72,7 +72,7 @@ bot.onText(/\/tj/, (msg) => {
 bot.onText(/\/arvo/, (msg) => {
 
   const chatId = msg.chat.id;
-  const rank = "alokas";
+  const rank = "Tykimeis";
   const surname = "Jarkko";
   const resp = "Leena tunnetaan nimellä " + rank + " " + surname;
   // send back the matched "whatever" to the chat
